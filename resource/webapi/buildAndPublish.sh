@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 HostUrl = "localhost:5002"
 AppName = "webapiapp"
@@ -13,4 +13,4 @@ docker build --pull -t $ImageName -f $Dockerfile .
 echo "begin push image"
 docker push $ImageName
 
-echo "success build and publish image: " +$ImageName
+echo "success build and publish image: $ImageName"
