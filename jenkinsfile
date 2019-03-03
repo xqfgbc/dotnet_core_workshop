@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh('buildAndPublish.sh')
+                sh('./resource/webapi/buildAndPublish.sh')
             }
         }
         stage('Test') {
