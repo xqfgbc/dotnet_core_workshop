@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                powerShell(readFileFromWorkspace('buildAndPublish.ps1'))
+                posh '.\\buildAndPublish.ps1'
             }
         }
         stage('Test') {
@@ -19,4 +19,8 @@ pipeline {
             }
         }
     }
+}
+
+def posh(cmd) {
+  bat 'powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "& ' + cmd + '"'
 }
