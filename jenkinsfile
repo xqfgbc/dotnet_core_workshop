@@ -5,6 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
+                sh "chmod +x -R ./resource/webapi/buildAndPublish.sh"
                 sh('./resource/webapi/buildAndPublish.sh')
             }
         }
@@ -19,8 +20,4 @@ pipeline {
             }
         }
     }
-}
-
-def posh(cmd) {
-  bat 'powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "& ' + cmd + '"'
 }
