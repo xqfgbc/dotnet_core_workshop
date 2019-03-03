@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                powershell(returnStatus: true, script: '.\\buildAndPublish.ps1')
+                powershell ".\\buildAndPublish.ps1"
             }
         }
         stage('Test') {
