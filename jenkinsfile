@@ -3,8 +3,11 @@ pipeline {
 
     stages {
         stage('Build') {
-            steps {
-                echo 'Building..'
+            def status = powershell(returnStatus: true, script: '.\\buildAndPublish.ps1')
+            if (status == 0) {
+                echo 'Success'
+            } else {
+                echo 'failed'
             }
         }
         stage('Test') {
