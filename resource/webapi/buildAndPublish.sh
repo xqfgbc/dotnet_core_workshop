@@ -8,7 +8,7 @@ Dockerfile="Dockerfile"
 echo "image name is: ${ImageName}"
 
 echo "begin build image"
-docker build --pull -t ${ImageName} -f ${Dockerfile} .
+docker build --pull -t ${ImageName} -f ${Dockerfile} ./resource/webapi/
 
 echo "begin push image"
 docker push ${ImageName}
