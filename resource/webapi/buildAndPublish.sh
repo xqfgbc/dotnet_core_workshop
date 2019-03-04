@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 HostUrl = "localhost:5002"
 AppName = "webapiapp"
