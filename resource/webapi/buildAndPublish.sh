@@ -1,9 +1,9 @@
-#! /usr/bin/env bash
+#!/bin/bash
 
-HostUrl = "localhost:5002"
-AppName = "webapiapp"
-ImageName = "${HostUrl}/${AppName}:${BUILD_NUMBER}"
-Dockerfile = "Dockerfile"
+HostUrl="localhost:5002"
+AppName="webapiapp"
+ImageName="${HostUrl}/${AppName}:${BUILD_NUMBER}"
+Dockerfile="Dockerfile"
 
 echo "image name is: ${ImageName}"
 
