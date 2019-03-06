@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Copy code to base path'
-                cp -rf .\resource\webapi\* .
+                sh "cp -rf ./resource/webapi/* ."
                 echo 'Build and push image'
                 sh "chmod 777 ./buildAndPublish.sh"
                 sh 'buildAndPublish.sh'
