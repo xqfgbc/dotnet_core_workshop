@@ -4,9 +4,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building...'
-                sh "chmod 777 ./resource/webapi/buildAndPublish.sh"
-                sh('./resource/webapi/buildAndPublish.sh')
+                echo 'Copy code to base path'
+                cp -rf .\resource\webapi\* .
+                echo 'Build and push image'
+                sh "chmod 777 ./buildAndPublish.sh"
+                sh 'buildAndPublish.sh'
             }
         }
         stage('Test') {
