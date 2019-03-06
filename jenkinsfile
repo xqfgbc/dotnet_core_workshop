@@ -8,7 +8,7 @@ pipeline {
                 sh "cp -rf ./resource/webapi/* ."
                 echo 'Build and push image'
                 sh "chmod 777 ./buildAndPublish.sh"
-                sh 'buildAndPublish.sh'
+                sh './buildAndPublish.sh'
             }
         }
         stage('Test') {
