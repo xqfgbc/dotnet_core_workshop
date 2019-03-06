@@ -6,6 +6,8 @@ pipeline {
             steps {
                 echo 'Copy code to base path'
                 sh "yes|cp -rf ./resource/webapi/. ."
+                echo 'Delete resource dir'
+                sh "rm -rf ./resource"
                 echo 'Build and push image'
                 sh "chmod 777 ./buildAndPublish.sh"
                 sh './buildAndPublish.sh'
