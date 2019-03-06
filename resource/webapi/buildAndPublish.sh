@@ -3,7 +3,7 @@
 HostUrl="localhost:5002"
 AppName="webapiapp"
 ImageName="${HostUrl}/${AppName}:${BUILD_NUMBER}"
-Dockerfile="./resource/webapi/Dockerfile"
+Dockerfile="Dockerfile"
 
 echo "image name is: ${ImageName}"
 
