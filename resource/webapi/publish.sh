@@ -10,7 +10,7 @@ echo "begin pull image"
 docker pull ${ImageName}
 
 echo "begin run image"
-docker run ${ImageName}
+docker run -d ${ImageName}
 
 echo "success run image: ${ImageName}"
 
