@@ -4,9 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                echo 'Set working dir'
                 dir("resource/webapi/") {
-                    echo 'Set working dir'
-                    sh "cd ./resource/webapi/"
                     sh "pwd"
                     echo 'Build and push image'
                     sh "chmod 777 ./buildAndPublish.sh"
