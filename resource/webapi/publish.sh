@@ -10,7 +10,7 @@ echo "begin pull image"
 docker pull ${ImageName}
 
 echo "begin run image"
-docker run -d ${ImageName}
+docker run --name webapiapp -p 8000:80 -d ${ImageName}
 
 echo "success run image: ${ImageName}"
 
