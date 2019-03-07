@@ -6,6 +6,7 @@ pipeline {
             steps {
                 echo 'Set working dir'
                 sh "cd resource/webapi/"
+                sh "pwd"
                 echo 'Build and push image'
                 sh "chmod 777 ./buildAndPublish.sh"
                 sh './buildAndPublish.sh'
