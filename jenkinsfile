@@ -3,13 +3,15 @@ pipeline {
 
     stages {
         stage('Build') {
-            steps {
-                echo 'Set working dir'
-                sh "cd ./resource/webapi/"
-                sh "pwd"
-                echo 'Build and push image'
-                sh "chmod 777 ./buildAndPublish.sh"
-                sh './buildAndPublish.sh'
+            dir("resource/webapi/") {
+                steps {
+                    echo 'Set working dir'
+                    sh "cd ./resource/webapi/"
+                    sh "pwd"
+                    echo 'Build and push image'
+                    sh "chmod 777 ./buildAndPublish.sh"
+                    sh './buildAndPublish.sh'
+                }
             }
         }
         stage('Test') {
