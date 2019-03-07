@@ -20,7 +20,12 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                echo 'Set working dir'
+                dir("resource/webapi/") {
+                    echo 'Deploy image'
+                    sh "chmod 777 ./publish.sh"
+                    sh './publish.sh'
+                }
             }
         }
     }

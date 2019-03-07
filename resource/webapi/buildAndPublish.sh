@@ -8,7 +8,7 @@ Dockerfile="Dockerfile"
 echo "image name is: ${ImageName}"
 
 echo "begin build image"
-docker build --pull -t ${ImageName} -f ${Dockerfile} .
+docker build -t ${ImageName} -f ${Dockerfile} .
 
 echo "begin push image"
 docker push ${ImageName}
