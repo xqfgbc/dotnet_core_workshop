@@ -3,8 +3,8 @@ pipeline {
 
     stages {
         stage('Build') {
-            dir("resource/webapi/") {
-                steps {
+            steps {
+                dir("resource/webapi/") {
                     echo 'Set working dir'
                     sh "cd ./resource/webapi/"
                     sh "pwd"
