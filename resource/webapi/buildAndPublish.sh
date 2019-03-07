@@ -13,4 +13,8 @@ docker build --pull -t ${ImageName} -f ${Dockerfile} .
 echo "begin push image"
 docker push ${ImageName}
 
+echo "remove image in docker"
+docker rmi ${ImageName}
+
 echo "success build and publish image: ${ImageName}"
+
